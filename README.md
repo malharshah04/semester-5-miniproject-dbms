@@ -1,84 +1,75 @@
-# Car Rental Management System
+### Car-Rental-Java-DBMS-Project
+* This is a Car Rental App made in Netbeans using Java and Mysql
+* For using the project **fork the project** and **clone** it in your local repository.
+* Open the project in Netbeans IDE.
 
-A desktop-based car rental management application built with **Java, NetBeans, and MySQL**. The project organizes vehicle records, customer information, rental transactions, returns, and login details in a relational database.
+#### 1. Fork the Repository.
 
-> **Project note:** This repository is an adapted version of the existing [Car-Rental-Java-DBMS-Project](https://github.com/afrozchakure/Car-Rental-Java-DBMS-Project). Keep this attribution if you use its code, and describe only the changes you have personally made.
+#### 2. Clone the Repository.  
 
-## GitHub repository description
+  ``
+  git clone https://github.com/afrozchakure/Car-Rental-Java-DBMS-Project.git
+  ``
 
-**Short description (recommended):**  
-A Java and MySQL car rental management system for managing cars, customers, rentals, returns, and rental records.
+#### The tables included in the MySQL database are:
+1. carregistration.
+2. customer.
+3. rental.
+4. login.
+5. returncar.  
 
-**Alternative description:**  
-Desktop car rental application developed with Java in NetBeans and MySQL for database-backed vehicle and rental management.
+#### The name of the database is **"rentcar"** and the description of tables is given below : 
 
-## Features
+##### 1. "carregistration" table includes :
+    
+| Field     | Type         | Null | Key | Default | Extra          |
+|-----------|--------------|------|-----|---------|----------------|
+| id        | int(10)      | NO   | PRI | NULL    | auto_increment |
+| car_no    | varchar(255) | YES  |     | NULL    |                |
+| make      | varchar(255) | YES  |     | NULL    |                |
+| model     | varchar(255) | YES  |     | NULL    |                |
+| available | varchar(255) | YES  |     | NULL    |                |
 
-- Maintain car registration details, including car number, make, model, and availability.
-- Store customer details such as customer ID, name, address, and mobile number.
-- Record rental transactions, including the car, customer, fee, rental date, and due date.
-- Record returned vehicles, return dates, elapsed days, and fines.
-- Store login records in the database.
+##### 2. "customer" table includes :
 
-*The features listed above reflect the database structure documented in the source README. Update this list to match the functionality you have tested in your own copy.*
+| Field   | Type         | Null | Key | Default | Extra          |
+|---------|--------------|------|-----|---------|----------------|
+| id      | int(10)      | NO   | PRI | NULL    | auto_increment |
+| cust_id | varchar(255) | YES  |     | NULL    |                |
+| name    | varchar(255) | YES  |     | NULL    |                |
+| address | tinytext     | YES  |     | NULL    |                |
+| mobile  | int(13)      | YES  |     | NULL    |                |
 
-## Technology stack
+##### 3. "rental" table includes :
 
-- **Language:** Java
-- **IDE:** NetBeans
-- **Database:** MySQL
+| Field   | Type         | Null | Key | Default | Extra          |
+|---------|--------------|------|-----|---------|----------------|
+| id      | int(10)      | NO   | PRI | NULL    | auto_increment |
+| car_id  | varchar(255) | YES  |     | NULL    |                |
+| cust_id | varchar(255) | YES  |     | NULL    |                |
+| fee     | int(11)      | YES  |     | NULL    |                |
+| date    | varchar(255) | YES  |     | NULL    |                |
+| due     | varchar(255) | YES  |     | NULL    |                |
 
-## Database structure
+##### 4. "login" table includes :
 
-The database is named `rentcar` in the source project. It documents the following tables:
+| Field    | Type         | Null | Key | Default | Extra          |
+|----------|--------------|------|-----|---------|----------------|
+| login_id | int(11)      | NO   | PRI | NULL    | auto_increment |
+| username | varchar(255) | YES  |     | NULL    |                |
+| password | varchar(255) | YES  |     | NULL    |                |
 
-| Table | Purpose |
-|---|---|
-| `carregistration` | Car details and availability |
-| `customer` | Customer records |
-| `rental` | Rental details, fees, and due dates |
-| `login` | Login records |
-| `returncar` | Vehicle return details and fines |
+##### 5. "returncar" table includes :
 
-## Getting started
+| Field       | Type         | Null | Key | Default | Extra          |
+|-------------|--------------|------|-----|---------|----------------|
+| id          | int(10)      | NO   | PRI | NULL    | auto_increment |
+| carid       | varchar(255) | YES  |     | NULL    |                |
+| custid      | varchar(255) | YES  |     | NULL    |                |
+| return_date | varchar(255) | YES  |     | NULL    |                |
+| elap        | int(11)      | YES  |     | NULL    |                |
+| fine        | int(11)      | YES  |     | NULL    |                |
+</li>
 
-### Prerequisites
 
-- Java Development Kit (JDK) compatible with the project
-- NetBeans IDE
-- MySQL Server
-- The project source code and its database SQL script, if supplied
-
-### Setup
-
-1. Clone or download this repository.
-2. Open the project in NetBeans.
-3. Create a MySQL database named `rentcar`, or use the database name configured in the application.
-4. Import the project's SQL script if one is included. If no script is included, create the required tables using the schema expected by the application.
-5. Check the database connection settings in the Java source code and update the host, port, database name, username, and password for your local MySQL setup.
-6. Build and run the application from NetBeans.
-7. Test the car, customer, rental, and return workflows before describing them as working features.
-
-## Configuration and security
-
-- Do not upload real database passwords or personal customer data.
-- Avoid committing credentials directly in source code; use local configuration where practical.
-- Change any default or sample login credentials before using the application.
-
-## What I changed
-
-Use this section to document your own work before publishing. Examples, **only if you actually completed them**:
-
-- Updated the user interface.
-- Improved database validation or error handling.
-- Added search, filtering, or reporting.
-- Improved database connection configuration.
-- Fixed bugs and added tests.
-
-## Acknowledgements
-
-This project is based on the publicly available [Car-Rental-Java-DBMS-Project by afrozchakure](https://github.com/afrozchakure/Car-Rental-Java-DBMS-Project). Please review the original repository's license and terms before redistributing or modifying its code.
-
-## Contributing
-
-Suggestions and bug reports are welcome. Please open an issue describing the problem or proposed improvement.
+* This repository is open to contributions :smile:. Feel free to raise issues and contribute.
