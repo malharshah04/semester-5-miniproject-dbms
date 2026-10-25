@@ -5,12 +5,6 @@
 
 #### 1. Fork the Repository.
 
-#### 2. Clone the Repository.  
-
-  ``
-  git clone https://github.com/afrozchakure/Car-Rental-Java-DBMS-Project.git
-  ``
-
 #### The tables included in the MySQL database are:
 1. carregistration.
 2. customer.
